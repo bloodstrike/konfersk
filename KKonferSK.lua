@@ -1749,10 +1749,7 @@ local function kld_loot_item(_, _, pvt, item)
   local dencher = nil
   local itemid = nil
   local give = nil
-
-  if (item["itemid"]) then
-    itemid = item["itemid"]
-  end
+  local itemid = match(item.ilink, "item:(%d+)")
 
   if (not item.ilink or item.ilink == "" or not itemid) then
     skipit = true
